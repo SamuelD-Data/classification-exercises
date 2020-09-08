@@ -1,0 +1,10 @@
+.DS_Store
+env.py
+.ipynb_checkpoints/
+__pycache__
+test.txt
+iris.csv
+anscombe.csv
+titanic.csv
+iris.csv
+
