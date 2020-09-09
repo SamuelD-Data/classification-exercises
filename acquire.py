@@ -55,3 +55,26 @@ def new_get_titanic_data():
 
         # return the dataframe
         return df 
+
+# importing os for use in function (was done earlier but displaying here to clarity)
+import os
+
+# creating function that creates a variable call filename that holds the name of a current, or soon to be created file
+def new_get_iris_data():
+    filename = "iris.csv"
+    
+     # if a file is found with a name that matches filename (iris.csv), the function will return the data as a dataframe
+    if os.path.isfile(filename):
+        return pd.read_csv(filename)
+    
+    # if no file with the specified name can be found the else statement is ran
+    else:
+        # creating sql query and using get_connection function to connect to iris database and create
+        # dataframe using data in measurements table joined with species table
+        df = pd.read_sql('SELECT * FROM measurements AS m JOIN species USING (species_id)', get_connection('iris_db'))
+
+        # writing dataframe to csv file
+        df.to_csv(filename, index = False)
+
+        # return the dataframe
+        return df 
