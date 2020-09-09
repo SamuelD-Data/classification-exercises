@@ -17,7 +17,6 @@ def prep_titanic(tdf):
     from sklearn.impute import SimpleImputer
     import warnings
     warnings.filterwarnings("ignore")
-    
     tdf = tdf.drop(columns = 'embark_town')
     tdf = tdf[~tdf.embarked.isnull()]
     tdf = tdf.drop(columns = 'deck')
