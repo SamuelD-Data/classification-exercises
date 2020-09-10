@@ -23,7 +23,6 @@ def prep_titanic(tdf):
     dummy_df = pd.get_dummies(tdf['embarked'], dummy_na = False)
     tdf = pd.concat([tdf, dummy_df], axis=1)
     scaler = MinMaxScaler()
-    scaler = MinMaxScaler()
     tdf[['age', 'fare']] = scaler.fit_transform(tdf[['age', 'fare']])
     imputer = SimpleImputer(strategy = 'most_frequent')
     imputer = imputer.fit(tdf[['age']])
