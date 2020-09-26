@@ -17,4 +17,13 @@ Creating column that holds tenure in years
 Converting "total_charges" from object to float
 Splitting data into train, validate, test
 
+# explore
 
+created heatmap of every variable'sx correlation to churn
+identified 4 "core" variables with strongest correlation (monthly charges, dependents, partner, automatic payments)
+plotted monthly charges, dependents, partner and automatic payements vs tenure to see if any of them correlates with retention
+performed t-tests and confirmed tenure is longer on average when:
+     monthly charges were lower
+     customer had dependents
+     customer had partner
+     customer used automatic payments
